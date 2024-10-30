@@ -19,15 +19,6 @@ app.use(cookieParser()); // allow us to parse incoming cookies
 // router
 app.use('/api/auth', authRoutes); // signin, login , logout router are there.
 
-
-
-
-
-
-
-
-
-
 app.listen(PORT, ()=>{
     connectDB();
     console.log("server is running on port: ", PORT);
