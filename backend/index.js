@@ -6,6 +6,7 @@ import cookieParser from 'cookie-parser'
 import { connectDB } from "./db/connectDB.js"; // import database
 
 import authRoutes from "./routes/auth.route.js"; // import router
+import router from "./Router/dataRoutes.js";
 
 dotenv.config();
 const app = express();
@@ -18,6 +19,7 @@ app.use(express.json())// allows us to parse incoming requests with JSON payload
 app.use(cookieParser()); // allow us to parse incoming cookies
 // router
 app.use('/api/auth', authRoutes); // signin, login , logout router are there.
+app.use('/api', router);
 
 app.listen(PORT, ()=>{
     connectDB();

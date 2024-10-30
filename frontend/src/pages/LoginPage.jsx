@@ -10,11 +10,12 @@ const LoginPage = ()=>{
   const [email, setEmail] = useState(" ");
   const [password, setPassword] = useState(" ")
   // let isLoading = false;
-  const {login, isLoading, error} = useAuthStore();
+  const {login, user, isLoading, error} = useAuthStore();
 
   const handleLogin = async (e) =>{
     e.preventDefault();
     // connection
+    console.log("user name: ", user);
     await login(email, password);
   }
 

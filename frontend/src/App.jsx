@@ -12,6 +12,11 @@ import LoadingSpinner from './components/LoadingSpinner';
 import ForgotPasswordPage from './pages/ForgotPasswordPage'
 import ResetPasswordPage from './pages/ResetPasswordPage'
 
+import Home from './component/Home';
+import Question from './component/Questions';
+import Result from './component/Result';
+import { ShowResult } from './component/ShowResult';
+
 
 // protect routes that require authentication
 const ProtectedRoute = ({children}) =>{
@@ -53,7 +58,7 @@ function App() {
 
   return (
     <div className='min-h-screen bg-gradient-to-br
-    from-gray-500 via-green-500 to-emerald-900 flex item-center justify-center  relative overflow-hidden'>
+    from-gray-500 via-blue-500 to-emerald-900 flex item-center justify-center  relative overflow-hidden'>
 
       <FloatingShape color='bg-green-900' size="w-64 h-64" top="-5%" left="10%" delay={0}/>
       <FloatingShape color='bg-emerald-900' size="w-48 h-48" top="70%" left="80%" delay={5}/>
@@ -90,6 +95,10 @@ function App() {
             </RedirectAuthenticatedUser>
           }
         />
+        <Route path={'/home'} element={<Home/>}/>
+        <Route path={'/questions'} element={<Question/>} />
+        <Route path={'/result'} element={<Result/>} />
+        <Route path={'/show-result'} element={<ShowResult/>} />
       </Routes>
       <Toaster />
     </div>
