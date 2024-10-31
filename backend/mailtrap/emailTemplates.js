@@ -143,7 +143,7 @@ export const PASSWORD_RESET_REQUEST_TEMPLATE = `
         </style>
     </head>
     <body>
-        <p>Hi {{name}},</p>
+        <p>Hi there,</p>
         <p>You requested to reset your password.</p>
         <p> Please, click the link below to reset your password</p>
         <a href="{link}">Reset Password</a>

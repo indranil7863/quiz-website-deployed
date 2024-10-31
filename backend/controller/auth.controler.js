@@ -6,6 +6,7 @@ import { sendVerificationEmail } from '../mailtrap/email.js';
 import { sendWelcomeEmail, sendPasswordRestEmail ,sendResetSuccessEmail} from '../mailtrap/email.js';
 import crypto from "crypto";
 
+
 export const signup =  async(req, res)=>{
     const {email, password,name} = req.body;
     
