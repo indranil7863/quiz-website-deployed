@@ -4,6 +4,8 @@ import '../style/Result.css'
 import { Link } from "react-router-dom";
 import { useAuthStore } from "../store/authStore";
 
+
+
 const Result = ({score, totalQuestions, selectedAnswers}) =>{
     
     const {user} = useAuthStore();

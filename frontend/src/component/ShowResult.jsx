@@ -9,14 +9,16 @@ export const ShowResult = () => {
     const [error, setError] = useState(false); // Error state
     const {user} = useAuthStore();  // from global object fetch the user name
     const name = user.name; // Replace with dynamic data as needed
-    const RequestURL = "http://localhost:5000/api/show-data";
+    // const RequestURL = "http://localhost:5000/api/show-data";
+    const API_URL = import.meta.env.MODE === "development" ? "http://localhost:5000/api" : "/api";
+
 
     // Function to fetch current results
     const fetchCurrentResults = async () => {
         setLoading(true); // Set loading to true when starting to fetch
         setError(false); // Reset error state
         try {
-            const response = await axios.post(`${RequestURL}`, { name }, { headers: { 'Content-Type': 'application/json' } });
+            const response = await axios.post(`${API_URL}/show-data`, { name }, { headers: { 'Content-Type': 'application/json' } });
             setResultData(response.data); // Update state with fetched data
             console.log("Data saved: ", response.data);
         } catch (error) {

@@ -7,6 +7,8 @@ import Result from "./Result.jsx";
 import { useAuthStore } from "../store/authStore.js";
 import axios from "axios";
 
+const API_URL = import.meta.env.MODE === "development" ? "http://localhost:5000/api" : "/api";
+
 const Question = () =>{
     const [currqindex, setCurrqIndex] = useState(0);
     const [selectedAnswers, setSelectedAnswers] = useState({});
@@ -66,7 +68,7 @@ const Question = () =>{
         accuracy
     })
         try{
-            const response = await axios.post(`http://localhost:5000/api/save-data`, dataTosave, {headers: {'Content-Type': 'application/json'}});
+            const response = await axios.post(`${API_URL}/save-data`, dataTosave, {headers: {'Content-Type': 'application/json'}});
             console.log("Data saved: ", response.data.result.name);
 
         }catch(error){
