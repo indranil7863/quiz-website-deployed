@@ -4,9 +4,6 @@ import '../style/Home.css';
 
 const Home = () =>{
 
-    const displayResult= () =>{
-
-    }
 
     return (
         <div className="container user-selection">
