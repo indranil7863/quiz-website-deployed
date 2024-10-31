@@ -95,6 +95,10 @@ function App() {
             </RedirectAuthenticatedUser>
           }
         />
+        {/* catch all routes */}
+        <Route path="*" element={<Navigate to='/' replace/>}>
+
+        </Route>
         <Route path={'/home'} element={<Home/>}/>
         <Route path={'/questions'} element={<Question/>} />
         <Route path={'/result'} element={<Result/>} />
